@@ -1,8 +1,8 @@
  <% if user_signed_in? %>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-    <%=link_to "Injuries", root_path, class: "btn btn-primary" %>
-    <%=link_to "New Post", root_path, class: "btn btn-primary" %>
+    <%=link_to "Injuries", posts_path, class: "btn btn-primary" %>
+    <%=link_to "New Post", new_post_path, class: "btn btn-primary" %>
     <%=link_to "My Posts", root_path, class: "btn btn-primary" %>
     <%=link_to "Recent Articles", root_path, class: "btn btn-primary" %>
     </ul>
