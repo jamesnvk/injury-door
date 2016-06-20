@@ -1,7 +1,5 @@
 <%= bootstrap_form_for(@post) do |f| %>
   <%= f.text_field :title %>
-
-  <div class="form-group"><label class="control-label" for="post_content">Content</label><textarea class="form-control" rows="20" name="post[content]" id="post_content"></textarea></div>
-  
+  <%= f.text_area :content, class: "form-control", rows: 20 %> 
   <%= f.submit "Submit Post" %>
 <% end %>

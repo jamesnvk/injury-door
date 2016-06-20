@@ -3,6 +3,10 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments
   has_many :users, through: :comments
+  #adds methods #post_categories, post_categories<<, post_category_ids=
+  has_many :post_categories
+  #adds methods category_ids
+  has_many :categories, through: :post_categories 
 
   def written_by
     user = User.find(self.user_id)
@@ -13,8 +17,8 @@ class Post < ActiveRecord::Base
     self.created_at.strftime("%b %d, %Y")
   end
 
- # def to_param
-    #self.slug
- # end
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
 
 end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
               path: '', path_names: {sign_in: 'login', sign_out: 'logout'}
   root 'site#index'
   resources :posts, path: 'injuries'
+  resources :categories
 end
 
           
