@@ -21,4 +21,11 @@ class Post < ActiveRecord::Base
     "#{id}-#{title.parameterize}"
   end
 
+  def categories_attributes=(categories_hash)
+    categories_hash.each do |i, category_attributes|
+      category = Category.find_or_create_by(name: category_attributes[:name])
+      self.post_categories.build(category: category)
+    end
+  end
+
 end
