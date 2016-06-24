@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
   end
 
   def new
@@ -13,12 +14,16 @@ class PostsController < ApplicationController
   end
 
   def create
+    #binding.pry
     @post = Post.create(post_params)
     @post.user_id = current_user.id
-    @post.save
-    #binding.pry
-    redirect_to post_path(@post)
+    if @post.save
+      redirect_to post_path(@post)
+    else
+      flash.now[:danger] = "An error has occured"
+    end
   end
+
 
   private
     def post_params

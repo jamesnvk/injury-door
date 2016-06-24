@@ -1,10 +1,9 @@
 <div class="well">
   <h4> Leave a Comment </h4>
-  <%= bootstrap_form_for(@post) do |f| %>
-    <%= f.text_area :comments, class: "form-control", rows: 7 %>
+  <%= bootstrap_form_for(@comment, url: post_comments_path(@post, @comment)) do |f| %>
+    <%= f.text_area :content, class: "form-control", rows: 7 %>
     <%= f.submit "Submit" %>
   <% end %>
 
 </div>
 <hr>
-
