@@ -1,10 +1,8 @@
  <% if user_signed_in? %>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-    <%=link_to "Injuries", posts_path, class: "btn btn-primary" %>
     <%=link_to "New Post", new_post_path, class: "btn btn-primary" %>
-    <%=link_to "My Posts", root_path, class: "btn btn-primary" %>
-    <%=link_to "Recent Articles", root_path, class: "btn btn-primary" %>
+    <%=link_to "My Posts", posts_path, class: "btn btn-primary" %>
     </ul>
   </div>
 
@@ -13,3 +11,5 @@
      <p class="lead">Please <%= link_to "Sign up", new_user_registration_path %>
     or <%= link_to "Log in", new_user_session_path %> </p>
 <% end %>
+
+<%= render 'layouts/blog_home' %>

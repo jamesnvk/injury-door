@@ -11,9 +11,9 @@ class Post < ActiveRecord::Base
   has_many :categories, through: :post_categories
   validates_presence_of :title, :content
 
-  def to_param
-    "#{id}-#{title.parameterize}"
-  end
+  #def to_param
+  #  "#{id}-#{title.parameterize}"
+ # end
 
   def categories_attributes=(categories_hash)
     categories_hash.each do |i, category_attributes|

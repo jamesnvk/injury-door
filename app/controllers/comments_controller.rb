@@ -1,4 +1,10 @@
 class CommentsController < ApplicationController
+
+  def index
+    
+    @post = Post.find(params[:post_id])
+  end
+
   def create
     #binding.pry
     @post = Post.find(params[:post_id])
