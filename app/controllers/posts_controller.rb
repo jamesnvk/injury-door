@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post)
     else
-      flash.now[:danger] = "An error has occured"
+      render 'new'
     end
   end
 

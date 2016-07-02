@@ -19,4 +19,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  #latest post for each user
+  def self.latest_post
+    self.all.map {|u| u.posts.last}
+  end
+
+  #user with the most posts
+  def self.most_posts
+    self.all.max_by {|u| u.posts.size}
+  end
+
 end

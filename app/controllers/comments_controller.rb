@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @comment.post
     else
-      flash.now[:danger] = "An error has occured"
+      redirect_to post_path(@post), alert: "Your comment could not be saved"
     end
   end
 

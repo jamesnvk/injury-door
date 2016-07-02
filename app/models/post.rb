@@ -9,6 +9,7 @@ class Post < ActiveRecord::Base
   has_many :post_categories
   #adds methods category_ids
   has_many :categories, through: :post_categories
+  validates_presence_of :title, :content
 
   def to_param
     "#{id}-#{title.parameterize}"
