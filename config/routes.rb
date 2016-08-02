@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'site#index'
   resources :posts, path: 'injuries' do
     resources :comments, only: [:create, :index]
+    resources :categories, only: [:create, :index, :new]
   end
 
   post '/injuries/:id', to: 'posts#show'

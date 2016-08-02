@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    #binding.pry
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
     @comment.user_id = current_user.id
