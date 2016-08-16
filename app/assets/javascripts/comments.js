@@ -1,7 +1,7 @@
 $(function(){
 
-  $('div .well form .btn-default').on('click', function(event){
-      alert("hackz")
+  $('.new_comment').on('submit', function(event){
+      var url = this.action
       event.preventDefault()
     })
     
