@@ -10,7 +10,10 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     
     if @comment.save
-      redirect_to @comment.post
+      render json: @comment
+
+      #redirect_to @comment.post
+
     else
       redirect_to post_path(@post), alert: "Your comment could not be saved"
     end

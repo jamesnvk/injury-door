@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :categories, only: [:create, :index, :new]
   end
 
-  post '/injuries/:id', to: 'posts#show'
+  #post '/injuries/:id', to: 'posts#show'
   
 
   resources :categories

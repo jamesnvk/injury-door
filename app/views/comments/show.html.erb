@@ -1,16 +1,13 @@
-<% @post.comments.each do |comment| %>
   <div class="media">
     <a class="pull-left">
       <span class="glyphicon glyphicon-flash"></span>
     </a>
   <div class="media-body">
     <h4 class="media-heading">
-      <%= comment.written_by %>
-      <small><%= comment.formatted_created_at %></small>
+      <%= @comment.written_by %>
+      <small><%= @comment.formatted_created_at %></small>
     </h4>
-    <span class="comment-content"> <%= comment.content %> </span>
+    <span class="comment-content"> <%= @comment.content %> </span>
     </div>
   </div>
-
-<% end %>
 </div>
